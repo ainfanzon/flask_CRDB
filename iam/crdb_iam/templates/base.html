@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="{{ url_for('static', filename='./images/favicon.ico') }}">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./css/styles.css') }}">
+    <img src="{{url_for('static', filename='./images/CockroachLabs_Logo.png')}}" width="450" height="70" align="middle" />
+  </head>
+  <body>
+    {% include("_navigation.html") %}
+    <section>
+      <header>
+        {% block header %}{% endblock header %}
+      </header>
+      <main>
+        {% block content %}<p>No messages.</p>{% endblock content %}
+      </main>
+    </section>
+  </body>
+</html>

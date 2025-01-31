@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block header %}
+   {{session['username']}} - {{session['role']}}
+   <h3>In Select</h3>
+{% endblock header %}
+
+{% block content %}
+
+  <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.customer_id.label }}
+    {{ form.customer_id() }}
+    {{ form.submit }}
+  </form>
+
+{% endblock content %}

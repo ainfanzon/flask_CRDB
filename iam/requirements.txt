@@ -1,0 +1,7 @@
+wheel
+flask
+flask_login
+bootstrap-flask
+Flask-WTF
+pandas
+psycopg2

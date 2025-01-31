@@ -1,0 +1,30 @@
+"coord":{"lon":-122.4459
+        ,"lat":37.4791}
+        ,"weather":[{"id":800
+                    ,"main":"Clear"
+                    ,"description":"clear sky"
+                    ,"icon":"01d"}]
+        ,"base":"stations"
+        ,"main":{"temp":64.53
+                ,"feels_like":62.56
+                ,"temp_min":61.92
+                ,"temp_max":68.11
+                ,"pressure":1021
+                ,"humidity":40
+                ,"sea_level":1021
+                ,"grnd_level":1011}
+        ,"visibility":10000
+        ,"wind":{"speed":3.44
+                ,"deg":320}
+        ,"clouds":{"all":0}
+        ,"dt":1731093912
+        ,"sys":{"type":2
+               ,"id":2087846
+               ,"country":"US"
+               ,"sunrise":1731076958
+               ,"sunset":1731114275}
+        ,"timezone":-28800
+        ,"id":0
+        ,"name":"Half Moon Bay"
+        ,"cod":200
+}

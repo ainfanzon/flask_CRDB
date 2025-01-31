@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2>{% block title %}About this Workshop{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+<style>
+  .grid-container {
+    display: grid;
+    background-color: #d7f4f5;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 5px;
+  }
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.99);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    color: #2d49c4
+  }
+  table tr td {
+  border-right: 1px solid blue;
+  color: black
+  }
+
+  table tr td:last-of-type {
+   border: none;
+  }
+</style> 
+  <div class="grid-container">
+    <div class="item1">
+      <table cellpadding="20px">
+	  <tr>
+            <th>
+              <img src="{{url_for('static', filename='./images/crdb_logo.png')}}" width="70" height="70" align="middle" />
+	    </th>
+            <th>
+              <img src="{{url_for('static', filename='./images/iam-icon.png')}}" width="70" height="70" align="middle" />
+	    </th>
+            <td>
+              <img src="{{url_for('static', filename='./images/crud.png')}}" width="70" height="70" align="middle" />
+	    </th>
+	    </th>
+        </tr>
+        <tr><td align = "left" valign = "top">
+          <p>CockroachDB is a distributed SQL database that has several characteristics that make it scalable and resilient, including:
+    Strong consistency. CockroachDB uses the Raft consensus algorithm to ensure that every read receives the most recent write. This helps to avoid conflicts and maintain data integrity.</p>
+         <ul>
+	   <li><p>ACID compliance - CockroachDB is fully ACID compliant, which means that it guarantees that transactions are processed correctly and consistently, even when there are failures.</p></li>
+	   <li><p>Data center failure tolerance - CockroachDB is designed to withstand data center failures by deploying multiple instances of symmetric nodes across a cluster of machines, disks, and data centers.</p></li>
+	   <li><p>High availability - CockroachDB can be deployed across multiple regions, and it can handle the loss of an availability zone or region without impacting performance.</p></li>
+	   <li><p>Scalability - CockroachDB is highly scalable, which can be useful in situations where there is a need to process and store large amounts of data.</p></li>
+         </ul>
+CockroachDB's scalability and resilience make it a good choice for a variety of applications, including financial services, logistics, and banking and wallet services.
+        </td>
+	<td align = "left" valign = "top">
+	  <p>An identity and access management (IAM) application is a set of tools and processes that helps organizations manage user access to digital resources:</p>
+        <ul> 
+	  <li><p>User identities - IAM applications create, store, and manage unique user profiles, or identities, for each person or device</li>
+	  <li><p>Access levels - IAM applications assign users specific roles and control their access to resources and networks.</li>
+	  <li><p>Access monitoring - IAM applications track and monitor user activity, and can enforce policies to ensure users only do what they're authorized to do.</li>
+	  <li><p>Compliance - IAM applications can help organizations comply with corporate and regulatory policies.</li>
+        </ul>
+	</td>
+	<td align = "left" valign = "top">
+	  <p>CRUD operations are the four basic functions for managing data in a database:</p>
+          <ul>
+	    <li><p>Create: Adds new data.</li>
+	    <li><p>Read: Retrieves existing data.</li>
+	    <li><p>Update: Modifies existing data.</li>
+	    <li><p>Delete: Removes existing data.</li>
+	  </ul>
+	  <p>CRUD operations are a fundamental part of many applications, including content management systems, relational databases, and object-oriented programming. They are essential for building efficient, secure, and scalable applications.</p>
+     </td></tr>
+    </table>
+  </div>
+{% endblock content %}

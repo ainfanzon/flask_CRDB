@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {{session['username']}} - {{session['role']}}
+{% endblock header %}
+
+{% block content %}
+<style>
+  .grid-container {
+    display: grid;
+    background-color: #d7f4f5;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 5px;
+  }
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.99);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    color:red
+  }
+  .item2 {
+    color: #2d49c4
+  }
+</style>
+  <div class="grid-container">
+    <div class="item1">
+	<h2>Executive Detailed Dashboard</h2>
+    </div>
+    <div class="item2">
+      <br>Customers with more than 15 orders since December 31, 1996.
+      &emsp;<p>{{ d1 | safe }}
+      </p>
+    </div>
+    <div class="item2">
+      <p>10 top selling products</p> 
+      {{ d2 | safe }}
+    </div>
+    <div class="item2">
+      <p>Number of employees and customers from each city that has employees in it</p>
+      {{ d3 | safe }}
+    </div>
+    <div class="item2">
+      <img src="{{url_for('static', filename='./images/TotalSpending.png')}}" width="450" hei    ght="450" align="middle" />
+    </div>
+    <div class="item2">
+      <p>How much the top ten customers have payed in total and how much in 1996, 1997 and 1998.</p>
+      {{ d4 | safe }}
+    </div>
+    <div class="item2">
+      <img src="{{url_for('static', filename='./images/Category_spending.png')}}" width="450" hei    ght="450" align="middle" />
+    </div>
+  </div>
+  <img src="{{url_for('static', filename='./images/cockroachdb_footer.png')}}" width="750" height="70" align="middle" /><br><br>
+<h3>Scalable and Resilient Northwind Traders Database</h3>
+{% endblock content %}

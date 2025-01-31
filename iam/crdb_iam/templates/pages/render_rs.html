@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block header %}
+<h2>Customer Information</h2>
+{% endblock header %}
+
+{% block content %}
+<style>
+  .grid-container {
+    display: grid;
+    background-color: #d7f4f5;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 5px;
+  }
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.99);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  .item1 {
+    color:red
+  }
+  .item2 {
+    color: #2d49c4
+  }
+</style>
+  <div class="grid-container">
+    <div class="item1">
+      <img src="{{url_for('static', filename='./images/roach03.png')}}" width="150" height="150" align="middle" />
+      <h4>Contact Name: {{ data[2] }}</h4>
+      <h4>Title: {{ data[3] }}</h4>
+    </div>
+    <div class="item2">
+      <table>
+        <tr>
+          <td>
+	    <table>
+	      <tr><td align = "right">Customer ID:</td><td align = "left"><b>{{ data[0] }}</b></td>
+              <tr><td align = "right">Company Name:</td><td align = "left"><b>{{ data[1] }}</b></td>
+              <tr><td align = "right">Phone Number:</td><td align = "left"><b>{{ data[9] }}</b></td>
+              <tr><td align = "right">Fax Number:</td><td align = "left"><b>{{ data[10] }}</b></td>
+	    </table>
+	  </td>
+	  <td>
+		  &emsp;&emsp;&emsp;&emsp;
+	  </td>
+          <td>
+	    <table>
+              <tr><td align = "right">Address:</td><td align = "left"><b>{{ data[3] }}</b></td>
+	      <tr><td align = "right">City:</td><td align = "left"><b>{{data[4] }}</b></td>
+              <tr><td align = "right">Postal Code:</td><td align = "left"><b>{{ data[7] }}</b></td>
+              <tr><td align = "right">Country:</td><td align = "left"><b>{{ data[8] }}</b></td>
+              <tr><td align = "right">Region:</td><td align = "left"><b>{{ data[6] }}</b></td>
+	    <table>
+	  </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+{% endblock content %}

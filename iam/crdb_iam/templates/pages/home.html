@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+  <form method="POST">
+    &emsp;&emsp;{{ form.csrf_token }}
+    {{ form.name.label }}
+    {{ form.name() }}<br><br>
+    {{ form.password.label }}
+    {{ form.password() }}<br><br>
+    {{ form.submit }}<br><br>
+  </form>
+  <img src="{{url_for('static', filename='./images/Pigeon-Point-Lighthouse.jpg')}}" width="750" height="270" align="middle" />
+  <h3>Scalable and Resilient Northwind Traders Database</h3>
+
+{% endblock content %}

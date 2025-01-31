@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h2>{% block title %}Bye{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+  <img src="{{url_for('static', filename='./images/logout_img.jpg')}}" width="750" height="270" align="middle" />
+  <h3>Don't forget your crowler !!!</h3>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block header %}
+  <h1>CRUD Operations<h1>
+{% endblock header %}
+
+{% block content %}
+
+  <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.action.label }}
+    {{ form.action() }}
+    {{ form.submit }}
+  </form>
+  <br><br>
+  <img src="{{url_for('static', filename='./images/crud_operations.png')}}" width="850" height="600" align="middle" />
+{% endblock content %}

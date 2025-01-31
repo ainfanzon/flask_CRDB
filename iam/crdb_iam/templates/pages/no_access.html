@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block header %}
+   Sorry {{session['username']}} the  {{session['role']}} role is not authorized!
+{% endblock header %}
+
+{% block content %}
+<style>
+   .grid-container {
+     display: grid;
+     grid-template-columns: auto auto auto;
+     gap: 10px;
+     padding: 5px;
+   }
+   .grid-container > div {
+     background-color: rgba(255, 255, 255, 0.8);
+     border-bottom: 1px solid black;
+     border-top: 1px solid black;
+     text-align: center;
+     padding: 20px 0;
+     font-size: 12px;
+   }
+   .item1 {
+     grid-column-end: span 3;
+   }
+ </style>
+   <div class="grid-container">
+     <div class="item1">
+        <img src="{{url_for('static', filename='./images/no_access.jpg')}}" width="450" height="370" align="middle" />
+
+     </div>
+   </div>
+{% endblock content %}
